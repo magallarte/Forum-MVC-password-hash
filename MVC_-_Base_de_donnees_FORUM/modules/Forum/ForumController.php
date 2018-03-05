@@ -94,7 +94,7 @@ class ForumController extends KernelController {
     
         // tester si num de page saisie manuellement 
         $page = (isset( $idpage) ?  $idpage : 1);
-        // Remplacer limite par PAGINATE
+        
         $limit = 20;
         $datas=$this->getModel()->get($idconversation);
         $conversation= new ClassConversation ($datas);

@@ -35,7 +35,7 @@
                 <ul class="menus" id="primary-menu">
                     <li class="menu-item<?php if( is_current_menu_item( get_app_info( 'home' ) ) ) echo ' current-menu-item'; ?>"><a href="<?php app_info( 'home' ); ?>" title="Accueil">Accueil</a></li>
                     <li class="menu-item"><a href="<?php echo DOMAIN.'/forum/show/' ?>" title="Conversation">Conversations</a></li>
-                    <li class="menu-item"><a href="<?php echo DOMAIN.'/user/connection';?>" title="Déconnexion">Se déconnecter</a></li> 
+                    <li class="menu-item"><a href="<?php echo DOMAIN.'/user/deconnection';?>" title="Déconnexion">Se déconnecter</a></li> 
                 </ul>
             </nav>
         </header>

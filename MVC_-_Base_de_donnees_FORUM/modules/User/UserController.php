@@ -61,7 +61,7 @@ class UserController extends KernelController {
     }
 
     /**
-     * showAction Displays the conversations list view
+     * connectionAction checks the login and password
      * @param  PDO|null     $db     The database object
      * @return void
      */
@@ -71,11 +71,6 @@ class UserController extends KernelController {
     
         $userPwdlist=$this->SelectPwdAll();
         $userLoginlist=$this->SelectLoginAll();
-
-        // if (($this->getRequest()->post('fin'))!==false)
-        // {
-        //     echo 'unset';
-        // }
 
         if($this->getRequest()->post('u_login') && $this->getRequest()->post('u_pwd')!==false)
         {
@@ -124,5 +119,25 @@ class UserController extends KernelController {
         
     }
 
+     /**
+     * deconnectionAction unset the session
+     
+     * @return void
+     */
+    public function deconnectionAction( PDO $db = null ) {
+        $this->init(  __FILE__, __FUNCTION__, $db ); // Adds third paramater for database usage
+        
+        
+        $this->getRequest()->unset(session,'user');
+        $this->getRequest()->unset(session,'id');
+      
+        $message= '
+            <br>
+            <p>Vous êtes déconnecté ! A bientôt</p>';
+           
+        $this->setProperty( 'message',  $message );
+        $this->render( true );
+        
+    }
   
 }
